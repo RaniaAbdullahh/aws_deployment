@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    command: gunicorn thing_api_auth.wsgi:application --bind 0.0.0.0:8001 --workers 4
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8001"
+
+
+ 
