@@ -60,12 +60,14 @@ INSTALLED_APPS = [
     #third-part apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
     #local apps
     'accounts',
     'thing'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware'
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -174,3 +176,4 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+CORS_ORIGIN_ALLOW_ALL = True
